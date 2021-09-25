@@ -9,10 +9,12 @@ export class Employee extends Person {
   ) {
     super(firstName, lastName, age);
   }
+}
+
+class Seller extends Employee {
 
   sellStock(symbol: string, shares: number) {
-    super.sellStock(symbol, shares);
-
+    console.log(`Selling ${shares} of ${symbol}`);
     this.reportToCompliance(symbol, shares);
   }
 
@@ -21,4 +23,5 @@ export class Employee extends Person {
       `${this.lastName} from ${this.department} sold ${shares} of ${symbol}`,
     );
   }
+  
 }
